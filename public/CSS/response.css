@@ -1,0 +1,47 @@
+.response-div {
+    width: 75%;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+.response-table {
+    display: inline;
+}
+
+.response-div h5 {
+    width: 95px;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: white;
+    color: rgb(104, 85, 224);
+}
+
+.table {
+    align-items: center;
+    margin: auto;
+}
+
+td {
+    text-align: center;
+}
+
+.labletext-res {
+    width: 150px;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+.collon {
+    width: 2%;
+}
+
+.lable-detail-res {
+    padding-left: 10px;
+}
+
+.ans,.que{
+    font-size: large;
+}

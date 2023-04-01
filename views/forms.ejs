@@ -1,0 +1,59 @@
+<%- include("partials/header") -%>
+
+
+    <!-- forms table -->
+    <div style="min-height: 450px;">
+        <table class="table" style="width: 1000px;">
+            <thead class="head-table">
+                <tr>
+                    <th style="text-align: center;">Sr.</th>
+                    <th style="text-align: center;">Form Title</th>
+                    <th style="text-align: center;">Form Link</th>
+                    <th style="text-align: center;">Responses Link</th>
+                    <th style="text-align: center;">Resp.</th>
+                    <th style="text-align: center;">Created Date</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <% formsData.forEach((element,index)=> { %>
+                    <tr>
+                        <td style="text-align: center;">
+                            <%= index+1 %>
+                        </td>
+                        <td class="form-title-col">
+                            <%= element.title %>
+                        </td>
+                        <td class="form-link-col"><a href=<%=element.form_link%>>Form link</a></td>
+                        <td class="form-link-col"><a href=<%="form/" + element.form_id + "/1" %>>Responses</a></td>
+                        <td>
+                            <% for( let i = 0; i < count.length; i++ ) { %>
+                                <% if (count[i].formid == element.form_id) { %>
+                                    <span style="color: rgb(75, 181, 67);"><b>
+                                        <%= count[i].filled %>
+                                    </b></span>
+                                    <b>-</b>
+                                    <span style="color: rgb(255, 0, 0);"><b>
+                                        <%= count[i].unfilled %>
+                                    </b></span></td>
+                                    <% break; %>
+                                <% } %>
+                            <% } %>
+                        </td>
+                        <td><%= element.date %></td>
+                    </tr>
+                    <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- footer -->
+    <%- include("partials/footer") -%>
+
+        <!-- Add Bootstrap CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+
+        </body>
+
+        </html>

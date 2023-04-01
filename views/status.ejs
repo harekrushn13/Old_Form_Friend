@@ -1,0 +1,111 @@
+<%- include("partials/header") -%>
+
+
+
+    <!-- filter -->
+    <div class="filter-div">
+        <h5>Filter</h5>
+        <form action="/formstatus" method="post">
+            <input type="hidden" name="formID" value=<%= formID %>>
+            <table class="filter-table">
+                <tr>
+                    <td class="checkbox-td"><input class="filter-radio" type="radio" name="filter" value="1" <% if (abs == 1) { %>checked<% } %>><b style="color: rgb(75,181,67);">Filled</b></td>
+                    <td class="checkbox-td"><input class="filter-radio" type="radio" name="filter" value="0" <% if (abs == 0) { %>checked<% } %>><b style="color: rgb(255,0,0);">Unfilled</b></td>
+                    <td class="checkbox-td"><input class="filter-radio" type="radio" name="filter" value="2" <% if (abs == 2) { %>checked<% } %>><b style="color: brown;">All</b></td>
+                </tr>
+            </table>
+            <button class="filter-btn card-btn">Search Modify</button>
+        </form>
+    </div>
+
+    <!-- details about form -->
+    <div class="details-div">
+        <h5>Details</h5>
+        <form>
+            <table class="details-table">
+                <tr>
+                    <td class="labletext">Form Title</td>
+                    <td style="width: 2%;vertical-align: top;"><b>:</b></td>
+                    <td class="lable-detail"><%= currentform.formtitle %></td>
+                </tr>
+                <tr>
+                    <td class="labletext">Batches</td>
+                    <td style="width: 2%;vertical-align: top;"><b>:</b></td>
+                    <td class="lable-detail"><% batches.forEach(element => { %>
+                        <%= element %> &emsp;
+                    <% }) %></td>
+                </tr>
+                <tr>
+                    <td class="labletext">Deadline</td>
+                    <td style="width: 2%;vertical-align: top;"><b>:</b></td>
+                    <td class="lable-detail"><%= currentform.deadline %></td>
+                </tr>
+                <tr>
+                    <td class="labletext">Form Link</td>
+                    <td style="width: 2%;vertical-align: top;"><b>:</b></td>
+                    <td class="lable-detail"><a href=<%= currentform.formlink %>><%= currentform.formlink %></a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="send-rem-div">
+        <a class="send-rem-btn" href=<%="/sendmails/" + formID %>><button class="login card-btn send-reminder">Send Reminder</button></a>
+    </div>
+    <hr class="hr-line">
+
+    <!-- forms table -->
+    <div style="min-height: 350px;">
+        <table class="table" style="width: 70%;">
+            <thead class="head-table">
+                <tr>
+                    <th style="text-align: center;">Batch</th>
+                    <th style="text-align: center;">Enrollment no.</th>
+                    <th style="text-align: center;">Student Name</th>
+                    <th style="text-align: center;">Email id.</th>
+                    <th style="text-align: center;">Status</th>
+                    <th style="text-align: center;">Responses</th>
+                </tr>
+            </thead>
+            <tbody class="table-group-divider">
+                <% allenrolls.forEach((element,index) => { %>
+                    <% if (element.status == abs || abs == 2) { %>
+                        <tr>
+                            <td class="batch-col"><%= element.batch %></td>
+                            <td class="form-title-col"><%= element.enroll %></td>
+                            <td class="stdname"><%= element.name %></td>
+                            <td class="std-email"><%= element.email %></td>
+                            <% if (element.status == 1) { %>
+                                <td class="status-col" style="color: rgb(75,181,67);"><b>Filled</b></td>
+                            <% } else { %>
+                                <td class="status-col" style="color: rgb(255,0,0);"><b>Unfilled</b></td>
+                            <% } %>
+                            <!-- filled -- rgb(75, 181, 67) -->
+                            <!-- unfilled --  rgb(255,0,0) -->
+                            <td>
+                            <% if (element.responseId != null) { %>
+                                <a href=<%= "/response/" + element.responseId + "/" + formID %>>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                </svg>
+                                </a>
+                            <% } %>
+                            </td>
+                        </tr>
+                    <% } %>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- footer -->
+    <%- include("partials/footer") -%>
+
+
+        <!-- Add Bootstrap CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+
+        </body>
+
+        </html>

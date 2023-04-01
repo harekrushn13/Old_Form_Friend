@@ -1,0 +1,7 @@
+/ = google login
+/login = nothing but redirect to google login
+/auth/google/secrets = google redirect
+/datataker = take usename email pfp and create cookie
+/home = homepage (FormFriend)
+/forms = all forms
+/form/:formid = particular form

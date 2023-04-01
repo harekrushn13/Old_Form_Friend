@@ -1,0 +1,113 @@
+<%- include("partials/header") -%>
+
+    <!-- google form title -->
+    <div class="form-title-div">
+        <hr>
+        <div class="container">
+            <h3 class="form-title">
+                <%= formdetails.title %>
+            </h3>
+        </div>
+        <hr>
+    </div>
+
+
+    <!-- Set Reminder -->
+    <div class="form-detail-div">
+        <h5>Form Details</h5>
+        <table>
+            <tbody>
+                <tr>
+                    <td class="labletext">Form id</td>
+                    <td class="collon">:</td>
+                    <td class="lable-detail">
+                        <%= formdetails.formID %>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="labletext">Form link</td>
+                    <td class="collon">:</td>
+                    <td class="lable-detail"><a href=<%=formdetails.formLink %>><%= formdetails.formLink %></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/createform" method="post">
+        <div class="reminder-div">
+            <h5>Set Reminder</h5>
+            <table>
+                <tr class="reminder-tr">
+                    <td class="labletext">
+                        <div>Reminder method</div>
+                    </td>
+                    <td style="width: 2%;">:</td>
+                    <td class="lable-detail">
+                        <table>
+                            <tbody>
+                                <tr class="reminder-checkbox">
+                                    <td><input type="checkbox">Manual Reminder</td>
+                                    <td><input type="checkbox">Auto Reminder</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+                <tr class="reminder-tr">
+                    <td class="labletext">
+                        <div>Deadline</div>
+                    </td>
+                    <td style="width: 2%;">:</td>
+                    <td class="lable-detail">
+                        <input id="datefield" type="date">
+
+                        <!-- js for date picker -->
+                        <script>
+                            var today = new Date();
+                            var dd = today.getDate();
+                            var mm = today.getMonth() + 1; //January is 0!
+                            var yyyy = today.getFullYear();
+
+                            if (dd < 10) {
+                                dd = '0' + dd;
+                            }
+
+                            if (mm < 10) {
+                                mm = '0' + mm;
+                            }
+
+                            today = yyyy + '-' + mm + '-' + dd;
+                            document.getElementById("datefield").setAttribute("min", "today");
+                            document.getElementById("datefield").setAttribute("max", "+1w");
+                        </script>
+
+                    </td>
+                </tr>
+                <tr class="reminder-tr">
+                    <td class="labletext">
+                        <div>Batches</div>
+                    </td>
+                    <td style="width: 2%;vertical-align: top;">:</td>
+                    <td class="lable-detail">
+                        <% batches.forEach(element=> { %>
+                            <input type="checkbox" name="batches[]" value=<%=element %>>IT_<%= element %><br>
+                                <% }) %>
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit" class="submit-link card-btn">Submit</button>
+        </div>
+    </form>
+
+    <!-- footer -->
+    <%- include("partials/footer") -%>
+
+        <!-- Add Bootstrap CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+            crossorigin="anonymous"></script>
+
+        </body>
+
+        </html>

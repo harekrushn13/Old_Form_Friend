@@ -1,0 +1,124 @@
+/* hr line */
+.hr-line {
+    width: 70%;
+    margin: 0.5rem auto 2rem auto;
+}
+
+/* filter css */
+
+.checkbox-td {
+    width: 110px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.filter-table {
+    display: inline;
+}
+
+.filter-div {
+    width: 75%;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+.filter-div h5 {
+    width: 50px;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: white;
+    color: rgb(104, 85, 224);
+}
+
+.filter-btn {
+    display: inline;
+    vertical-align: middle;
+    margin-top: -60px;
+    margin-left: 450px;
+}
+
+
+
+/* filter-checkbox */
+.filter-radio {
+    margin: 1.5rem 10px;
+}
+
+/* Details div css */
+.details-div {
+    width: 75%;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+
+.details-table {
+    display: inline;
+}
+
+.details-div h5 {
+    width: 57px;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: white;
+    color: rgb(104, 85, 224);
+}
+
+.send-rem-div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send-rem-btn{
+    text-decoration: none;
+}
+.send-reminder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* table css */
+
+.table {
+    align-items: center;
+    margin: auto;
+}
+
+td{
+    text-align: center;
+}
+
+.head-table {
+    color: rgb(104, 85, 224);
+}
+
+/* table raw css */
+/* .batch-col{
+
+} */
+
+.stdname {
+    margin: auto;
+    min-width: 300px;
+}
+
+.std-email {
+    max-width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* footer */
+/* #footer {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 60px;
+} */
+#footer {
+    margin: auto;
+    text-align: center;
+}

@@ -1,0 +1,103 @@
+body {
+    font-family: 'Comic Neue', cursive;
+    /* font-family: 'Merriweather', serif; */
+    /* font-family: 'Montserrat', sans-serif; */
+}
+
+/* form title css */
+.form-title-div {
+    width: 65%;
+    margin: 0 auto;
+    background-color: #f6f6f6;
+
+}
+
+.form-title {
+    color: rgb(104, 85, 224);
+}
+
+/* Reminder */
+.form-detail-div {
+    width: 65%;
+    margin: 50px auto;
+    border: 1px solid black;
+}
+
+.form-detail-div h5 {
+    width: 120px;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: white;
+    color: rgb(104, 85, 224);
+}
+
+.reminder-div {
+    width: 65%;
+    margin: 50px auto;
+    border: 1px solid black;
+}
+
+.reminder-div h5 {
+    width: 125px;
+    margin-top: -15px;
+    margin-left: 10px;
+    background: white;
+    color: rgb(104, 85, 224);
+}
+
+
+/* table body */
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 15px;
+}
+
+th,
+td {
+    width: 150px;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+.labletext {
+    width: 150px;
+    font-weight: bold;
+    font-size: 14px !important;
+    text-align: left;
+    vertical-align: top;
+    padding-left: 10px;
+}
+
+.collon {
+    width: 2%;
+}
+
+.lable-detail {
+    padding-left: 10px;
+}
+
+.remind-days {
+    width: 50px;
+
+}
+
+
+
+
+
+
+
+
+/* footer */
+/* #footer {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+    height: 60px;
+} */
+#footer {
+    margin: auto;
+    text-align: center;
+}
